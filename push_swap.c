@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:06:00 by pcampoy-          #+#    #+#             */
-/*   Updated: 2024/11/16 19:09:57 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2024/11/16 20:05:04 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_checknumbers(char *numbers)
 	i = 0;
 	while (numbers[i])
 	{
-		if (!ft_isdigit(numbers[i]))
+		if (ft_isdigit(numbers[i]) != 0)
 		{
 			ft_printf("Error\n");
 			exit(1);
