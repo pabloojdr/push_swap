@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 19:17:02 by pcampoy-          #+#    #+#             */
-/*   Updated: 2024/08/23 19:18:33 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:50:44 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,11 @@ int	ft_putnumber_unsigned(unsigned int n);
 /// @param n Pointer direction
 /// @return Number of characters written
 int	ft_putvoid(unsigned long int n);
+
+/// @brief Print a string
+/// @param s String to print
+/// @param  
+/// @return Number of characters printed
+int	ft_printf(char const *s, ...);
+
 #endif
