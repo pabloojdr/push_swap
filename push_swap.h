@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:57:38 by pcampoy-          #+#    #+#             */
-/*   Updated: 2024/11/16 20:11:39 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2024/12/06 18:40:15 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,31 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-/// @brief Checks if the elements of a string are numbers
-/// @param numbers String to check
-void	ft_checknumbers(char *numbers);
+/// @brief 
+/// @param argv 
+/// @return 
+int		ft_checknargs(char *argv);
 
-/// @brief Checks whether a string only contains no-repeating numbers
-/// @param numbers String to check
-void	ft_checkerrorssimple(char *numbers);
+/// @brief 
+/// @param arg 
+/// @return 
+int		ft_checkalchar(char **arg);
 
-/// @brief Checks whether the received arguments contain repeating numbers 
-/// @param numarg Number of arguments
-/// @param args Arguments to check
-void	ft_checkerrorsmult(int numarg, char *args[]);
+/// @brief 
+/// @param arg 
+/// @param a 
+/// @return 
+int		ft_store(char **arg, t_stack *a);
+
+/// @brief 
+/// @param content 
+/// @return 
+t_stack	*initstack(int content);
+
+/// @brief 
+/// @param s 
+/// @param args 
+/// @return 
+void	initargs(t_stack **s, char **args);
 
 #endif
