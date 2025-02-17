@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:57:38 by pcampoy-          #+#    #+#             */
-/*   Updated: 2024/12/06 18:40:15 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:46:51 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,26 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-/// @brief 
-/// @param argv 
-/// @return 
-int		ft_checknargs(char *argv);
+/// @brief Checks how many numbers are included in a given array
+/// @param argv Array to check
+/// @return The number of characters cataloged as digit in a given array
+int		checknargs(char *argv);
 
-/// @brief 
-/// @param arg 
-/// @return 
-int		ft_checkalchar(char **arg);
+/// @brief Checks whether a given array contains only digits, spaces and plus or minus signs
+/// @param arg Array to check
+/// @return 1 if false, 0 otherwise
+int		checkalchar(char **arg);
+
+/// @brief Checks if a given array contains duplicated numbers
+/// @param arg Array to check
+/// @return 1 if true, 0 otherwise
+int		checkdup(char **arg);
 
 /// @brief 
 /// @param arg 
 /// @param a 
 /// @return 
-int		ft_store(char **arg, t_stack *a);
+int		store(char **arg, t_stack *a);
 
 /// @brief 
 /// @param content 
