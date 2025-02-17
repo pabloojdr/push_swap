@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:57:38 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/17 15:46:51 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:40:43 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ typedef struct s_stack
 /// @return The number of characters cataloged as digit in a given array
 int		checknargs(char *argv);
 
-/// @brief Checks whether a given array contains only digits, spaces and plus or minus signs
+/// @brief Checks whether a given array contains only digits, 
+/// spaces and plus or minus signs
 /// @param arg Array to check
 /// @return 1 if false, 0 otherwise
 int		checkalchar(char **arg);
