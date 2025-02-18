@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 20:17:14 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/18 17:45:45 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:57:18 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,21 @@ void	initargs(t_stack **s, char **args)
 		addstack(s, initstack(n));
 		i++;
 	}
+}
+
+int	stacksize(t_stack *s)
+{
+	t_stack	*aux;
+	int		size;
+
+	aux = s;
+	size = 0;
+	while (aux != NULL)
+	{
+		size++;
+		aux = aux->next;
+	}
+	return (size);
 }
 
 void	printstack(t_stack **s)
