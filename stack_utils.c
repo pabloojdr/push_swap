@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 20:17:14 by pcampoy-          #+#    #+#             */
-/*   Updated: 2024/12/06 18:43:46 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:45:45 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,17 @@ void	initargs(t_stack **s, char **args)
 		addstack(s, initstack(n));
 		i++;
 	}
+}
+
+void	printstack(t_stack **s)
+{
+	t_stack	*aux;
+
+	aux = *s;
+	while (aux != NULL)
+	{
+		ft_printf("%i ", aux->value);
+		aux = aux->next;
+	}
+	ft_printf("\n");
 }
