@@ -6,7 +6,7 @@
 /*   By: pabloojdr <pabloojdr@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:06:00 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/18 23:02:14 by pabloojdr        ###   ########.fr       */
+/*   Updated: 2025/02/18 23:29:57 by pabloojdr        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,13 +104,15 @@ void	ft_free(char **s)		// Libera memoria
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
-	t_stack	*b;
+	//t_stack	*b;
 	char	**arguments;
 
 	a = NULL;
-	b = NULL;
+	//b = NULL;
 	arguments = check(argc, argv);
 	initargs(&a, arguments);
 	printstack(&a);
 	asignindex(a);
+	choosealg(&a);
+	printstack(&a);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pabloojdr <pabloojdr@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:57:38 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/18 18:07:37 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/18 23:30:06 by pabloojdr        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,42 +42,46 @@ int		checkalchar(char **arg);
 /// @return 1 if true, 0 otherwise
 int		checkdup(char **arg);
 
-/// @brief 
-/// @param argc 
-/// @param argv 
-/// @return 
+/// @brief Checks the possible errors of the arguments given in push_swap
+/// @param argc number of arguments
+/// @param argv arguments
+/// @return Array of chars filled with the numbers to sort in push_swap
 char	**check(int argc, char *argv[]);
 
-/// @brief 
-/// @param arg 
-/// @return 
+/// @brief Checks if there are duplicate numbers or bigger/smaller numbers than integer limits 
+/// @param arg Array to check
+/// @return -1 if there are any errors, 0 otherwise
 int		checkerr(char **arg);
 
-/// @brief 
+/// @brief Frees memory
 /// @param s 
 void	ft_free(char **s);
 
-/// @brief 
-/// @param s 
-/// @return 
+/// @brief Calculates the size of a stack
+/// @param s Stack
+/// @return Size of the stack
 int		stacksize(t_stack *s);
 
-/// @brief 
-/// @param content 
-/// @return 
+/// @brief  Creates a new node of a list of stacks
+/// @param content value of the node
+/// @return a node whose type is t_stack
 t_stack	*initstack(int content);
 
-/// @brief 
-/// @param s 
-/// @param args  
+/// @brief Initializes a list of stacks
+/// @param s List to initialize
+/// @param args  Numbers to include in the stack
 void	initargs(t_stack **s, char **args);
 
-/// @brief 
-/// @param s 
+/// @brief Print every node's value of a stack
+/// @param s Stack to print
 void	printstack(t_stack **s);
 
-/// @brief 
-/// @param s 
+/// @brief Assigns indices from lowest to highest to the elements of a stack
+/// @param s Stack
 void	asignindex(t_stack *s);
+
+void	choosealg(t_stack **a);
+
+void	algtwo(t_stack **s);
 
 #endif
