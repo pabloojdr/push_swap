@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:06:00 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/17 16:33:30 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:31:49 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,28 +103,13 @@ void	ft_free(char **s)		// Libera memoria
 
 int	main(int argc, char *argv[])
 {
+	t_stack	*a;
+	t_stack	*b;
 	char	**arguments;
-	int		allocated;
-/* 	t_stack	*a; */
 
-	arguments = NULL;
-	allocated = 0;
-	if (argc <= 1 || (argc == 2 && checknargs(argv[1]) <= 1) 	// Comprobamos los casos en los que no se pasan argumentos, se pasan argumentos y ninguno es un número, y
-		|| checkalchar(&argv[1]))
-		exit(1);												// Sale del programa y devuelve el control sin hacer nada
-	if (argc == 2 && checknargs(argv[1]) > 1)
-	{
-		arguments = ft_split(argv[1], ' ');						// Devuelve un array de arrays que contiene a los números por separado como chars
-		allocated = 1;
-	}															// Comprobamos que lo pasan como cadena y que la cadena contiene más de un numero
-	else if (argc > 2)											// Si el número de argumentos pasados es más de dos, los numeros no vienen como cadena y se asignan directamente
-		arguments = &argv[1];
-	if (checkerr(arguments) == -1)
-	{
-		if (allocated == 1)
-			ft_free(arguments);
-		exit(1);
-	}
-	return (0);
-/* 	initargs(&a, arguments); */
+	a = NULL;
+	b = NULL;
+	arguments = check(argc, argv);
+	initargs(&a, arguments);
+	printstack(&a);
 }
