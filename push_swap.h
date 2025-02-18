@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:57:38 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/17 16:40:43 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/18 18:07:37 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,24 @@ int		checkalchar(char **arg);
 int		checkdup(char **arg);
 
 /// @brief 
-/// @param arg 
-/// @param a 
+/// @param argc 
+/// @param argv 
 /// @return 
-int		store(char **arg, t_stack *a);
+char	**check(int argc, char *argv[]);
+
+/// @brief 
+/// @param arg 
+/// @return 
+int		checkerr(char **arg);
+
+/// @brief 
+/// @param s 
+void	ft_free(char **s);
+
+/// @brief 
+/// @param s 
+/// @return 
+int		stacksize(t_stack *s);
 
 /// @brief 
 /// @param content 
@@ -55,8 +69,15 @@ t_stack	*initstack(int content);
 
 /// @brief 
 /// @param s 
-/// @param args 
-/// @return 
+/// @param args  
 void	initargs(t_stack **s, char **args);
+
+/// @brief 
+/// @param s 
+void	printstack(t_stack **s);
+
+/// @brief 
+/// @param s 
+void	asignindex(t_stack *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:06:00 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/18 17:31:49 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/18 18:07:45 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,4 +112,9 @@ int	main(int argc, char *argv[])
 	arguments = check(argc, argv);
 	initargs(&a, arguments);
 	printstack(&a);
+	asignindex(a);
+	printstack(&a);
+	for(int i = 0; i < stacksize(a); i++) {
+		ft_printf("index: %i ", a->index);
+	}
 }

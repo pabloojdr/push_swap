@@ -4,7 +4,7 @@ CC = cc
 FLAGS = -Wall -Werror -Wextra
 RM = rm -f
 
-SRC = push_swap.c stack_utils.c push_swap_utils.c
+SRC = push_swap.c push_swap_utils.c stack_utils.c stack_more_utils.c
 OBJS = $(SRC:.c=.o)
 
 %.o: %.c
