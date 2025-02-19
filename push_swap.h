@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pabloojdr <pabloojdr@student.42.fr>        +#+  +:+       +#+        */
+/*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:57:38 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/18 23:30:06 by pabloojdr        ###   ########.fr       */
+/*   Updated: 2025/02/19 18:21:17 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ int		checkdup(char **arg);
 /// @return Array of chars filled with the numbers to sort in push_swap
 char	**check(int argc, char *argv[]);
 
-/// @brief Checks if there are duplicate numbers or bigger/smaller numbers than integer limits 
+/// @brief Checks if there are duplicate numbers or 
+// bigger/smaller numbers than integer limits 
 /// @param arg Array to check
 /// @return -1 if there are any errors, 0 otherwise
 int		checkerr(char **arg);
@@ -80,8 +81,35 @@ void	printstack(t_stack **s);
 /// @param s Stack
 void	asignindex(t_stack *s);
 
-void	choosealg(t_stack **a);
+void	asignposition(t_stack *s);
+
+void	asigntargetposition(t_stack **a, t_stack **b);
+
+int		getlowestindex(t_stack **a);
+
+int		getpositionbyindex(int index, t_stack **a);
+
+void	choosealg(t_stack **a, t_stack **b);
 
 void	algtwo(t_stack **s);
 
+void	algthree(t_stack **s);
+
+void	algps(t_stack **a, t_stack **b);
+
+void	pa(t_stack **a, t_stack **b);
+
+void	sa(t_stack **s);
+
+void	ra(t_stack **s);
+
+void	rra(t_stack **s);
+
+void	pb(t_stack **a, t_stack **b);
+
+void	sb(t_stack **s);
+
+void	rb(t_stack **s);
+
+void	rrb(t_stack **s);
 #endif
