@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:57:38 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/19 18:21:17 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/21 19:43:43 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ int		checkdup(char **arg);
 /// @return Array of chars filled with the numbers to sort in push_swap
 char	**check(int argc, char *argv[]);
 
+/// @brief 
+/// @param n 
+/// @return 
+int		ft_abs(int n);
+
 /// @brief Checks if there are duplicate numbers or 
 // bigger/smaller numbers than integer limits 
 /// @param arg Array to check
@@ -81,35 +86,131 @@ void	printstack(t_stack **s);
 /// @param s Stack
 void	asignindex(t_stack *s);
 
+/// @brief 
+/// @param s 
 void	asignposition(t_stack *s);
 
-void	asigntargetposition(t_stack **a, t_stack **b);
-
+/// @brief 
+/// @param a 
+/// @return 
 int		getlowestindex(t_stack **a);
 
+/// @brief 
+/// @param index 
+/// @param a 
+/// @return 
 int		getpositionbyindex(int index, t_stack **a);
 
+/// @brief 
+/// @param a 
+/// @param b 
+void	asigntargetposition(t_stack **a, t_stack **b);
+
+/// @brief 
+/// @param a 
+/// @param b 
+void	calculatecost(t_stack **a, t_stack **b);
+
+/// @brief 
+/// @param a 
+/// @param b 
+void	arrangestacks(t_stack **a, t_stack **b);
+
+/// @brief 
+/// @param b 
+/// @return 
+t_stack	*mincost(t_stack **b);
+
+/// @brief 
+/// @param a 
+/// @param b 
 void	choosealg(t_stack **a, t_stack **b);
 
+/// @brief 
+/// @param s 
 void	algtwo(t_stack **s);
 
+/// @brief 
+/// @param s 
 void	algthree(t_stack **s);
 
+/// @brief 
+/// @param a 
+/// @param b 
 void	algps(t_stack **a, t_stack **b);
 
+/// @brief 
+/// @param a 
+/// @param b 
+void	algevaluate(t_stack **a, t_stack **b);
+
+/// @brief 
+/// @param a 
+/// @param b 
 void	pa(t_stack **a, t_stack **b);
 
+/// @brief 
+/// @param s 
 void	sa(t_stack **s);
 
-void	ra(t_stack **s);
+/// @brief 
+/// @param s 
+void	ra(t_stack **s, int p);
 
-void	rra(t_stack **s);
+/// @brief 
+/// @param s 
+void	rra(t_stack **s, int p);
 
+/// @brief 
+/// @param a 
+/// @param b 
 void	pb(t_stack **a, t_stack **b);
 
+/// @brief 
+/// @param s 
 void	sb(t_stack **s);
 
-void	rb(t_stack **s);
+/// @brief 
+/// @param s 
+void	rb(t_stack **s, int p);
 
-void	rrb(t_stack **s);
+/// @brief 
+/// @param s 
+void	rrb(t_stack **s, int p);
+
+/// @brief 
+/// @param a 
+/// @param b 
+void	rr(t_stack **a, t_stack **b);
+
+/// @brief 
+/// @param a 
+/// @param b 
+void	rrr(t_stack **a, t_stack **b);
+
+/// @brief 
+/// @param a 
+/// @param b 
+/// @param cost_a 
+/// @param cost_b 
+void	arrangerrr(t_stack **a, t_stack **b, int cost_a, int cost_b);
+
+/// @brief 
+/// @param a 
+/// @param b 
+/// @param cost_a 
+/// @param cost_b 
+void	arrangerr(t_stack **a, t_stack **b, int cost_a, int cost_b);
+
+/// @brief 
+/// @param s 
+/// @param cost 
+/// @param t 
+void	arrangerrrx(t_stack **s, int cost, int t);
+
+/// @brief 
+/// @param s 
+/// @param cost 
+/// @param t 
+void	arrangerrx(t_stack **s, int cost, int t);
 #endif
