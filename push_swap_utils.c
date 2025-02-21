@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 15:36:47 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/18 17:21:27 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/21 18:39:58 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,11 @@ char	**check(int argc, char *argv[])
 		exit(1);
 	}
 	return (arguments);
+}
+
+int	ft_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
 }
