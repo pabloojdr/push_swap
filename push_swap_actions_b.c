@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:51:18 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/19 18:20:24 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/21 19:07:41 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	sb(t_stack **s)
 	ft_printf("sb\n");
 }
 
-void	rb(t_stack **s)
+void	rb(t_stack **s, int p)
 {
 	t_stack	*first;
 	t_stack	*aux;
@@ -50,10 +50,11 @@ void	rb(t_stack **s)
 	aux->next = first;
 	*s = first->next;
 	first->next = NULL;
-	ft_printf("rb\n");
+	if (p == 1)
+		ft_printf("rb\n");
 }
 
-void	rrb(t_stack **s)
+void	rrb(t_stack **s, int p)
 {
 	t_stack	*aux;
 
@@ -63,5 +64,13 @@ void	rrb(t_stack **s)
 	aux->next->next = *s;
 	*s = aux->next;
 	aux->next = NULL;
-	ft_printf("rrb\n");
+	if (p == 1)
+		ft_printf("rrb\n");
+}
+
+void	rr(t_stack **a, t_stack **b)
+{
+	ra(a, 0);
+	rb(b, 0);
+	ft_printf("rr\n");
 }
