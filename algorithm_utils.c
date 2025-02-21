@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 23:06:39 by pabloojdr         #+#    #+#             */
-/*   Updated: 2025/02/19 17:58:27 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/21 19:42:29 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	algthree(t_stack **s)
 	third = second->next;
 	if (first->index > second->index && first->index > third->index)
 	{
-		ra(s);
+		ra(s, 1);
 		algthree(s);
 	}
 	else if (second->index > first->index && second->index > third->index)
 	{
-		rra(s);
+		rra(s, 1);
 		algthree(s);
 	}
 	else if (first->index > second->index)
@@ -68,12 +68,27 @@ void	algps(t_stack **a, t_stack **b)
 		else if (i >= stacksize(*a))
 			pb(a, b);
 		else
-			ra(a);
+			ra(a, 1);
 		i++;
 	}
-	algthree(a);
-	asignposition(*a);
-	asigntargetposition(a, b);
+	algevaluate(a, b);
 	printstack(a);
 	printstack(b);
+}
+
+void	algevaluate(t_stack **a, t_stack **b)
+{
+	if (b != 0)
+	{
+		asignposition(*a);
+		asignposition(*b);
+		asigntargetposition(a, b);
+		arrangestacks(a, b);
+	}
+	else
+	{
+		asignindex(*a);
+		asignposition(*a);
+		//arrangea(a);
+	}
 }

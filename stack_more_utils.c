@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:59:23 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/19 17:58:17 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/21 18:14:03 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,27 +49,6 @@ void	asignposition(t_stack *s)
 	}
 }
 
-void	asigntargetposition(t_stack **a, t_stack **b)
-{
-	t_stack	*auxa;
-	t_stack	*auxb;
-
-	auxb = *b;
-	while (auxb != NULL)
-	{
-		auxa = *a;
-		while (auxa != NULL)
-		{
-			if (auxb->index + 1 == auxa->index)
-				auxb->target_pos = auxa->pos;
-			else if (auxb->index == stacksize(*a) + stacksize(*b))
-				auxb->target_pos = getpositionbyindex(getlowestindex(a), a);
-			auxa = auxa->next;
-		}
-		auxb = auxb->next;
-	}
-}
-
 int	getlowestindex(t_stack **a)
 {
 	t_stack	*aux;
@@ -98,4 +77,25 @@ int	getpositionbyindex(int index, t_stack **a)
 		aux = aux->next;
 	}
 	return (-1);
+}
+
+void	asigntargetposition(t_stack **a, t_stack **b)
+{
+	t_stack	*auxa;
+	t_stack	*auxb;
+
+	auxb = *b;
+	while (auxb != NULL)
+	{
+		auxa = *a;
+		while (auxa != NULL)
+		{
+			if (auxb->index + 1 == auxa->index)
+				auxb->target_pos = auxa->pos;
+			else if (auxb->index == stacksize(*a) + stacksize(*b))
+				auxb->target_pos = getpositionbyindex(getlowestindex(a), a);
+			auxa = auxa->next;
+		}
+		auxb = auxb->next;
+	}
 }
