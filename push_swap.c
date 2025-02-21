@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:06:00 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/19 17:58:33 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/21 19:33:28 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,5 @@ int	main(int argc, char *argv[])
 	printstack(&a);
 	asignindex(a);
 	choosealg(&a, &b);
+	printstack(&a);
 }
