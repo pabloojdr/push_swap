@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 15:51:18 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/21 19:07:41 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:06:27 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	rrb(t_stack **s, int p)
 	t_stack	*aux;
 
 	aux = *s;
+	printf("No puede asignar en rrb\n");
 	while (aux->next->next != NULL)
 		aux = aux->next;
 	aux->next->next = *s;
