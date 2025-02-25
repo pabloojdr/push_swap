@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 23:06:39 by pabloojdr         #+#    #+#             */
-/*   Updated: 2025/02/21 19:42:29 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/25 17:58:18 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,19 @@ void	algps(t_stack **a, t_stack **b)
 		i++;
 	}
 	algevaluate(a, b);
-	printstack(a);
-	printstack(b);
+	//printstack(a);
+	//printstack(b);
 }
 
 void	algevaluate(t_stack **a, t_stack **b)
 {
-	if (b != 0)
+	if (*b != 0)
 	{
 		asignposition(*a);
 		asignposition(*b);
 		asigntargetposition(a, b);
+		calculatecost(a, b);
+		algthree(a);
 		arrangestacks(a, b);
 	}
 	else
