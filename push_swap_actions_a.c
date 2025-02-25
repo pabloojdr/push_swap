@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 14:23:41 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/21 19:42:52 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:05:49 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ra(t_stack **s, int p)
 	aux->next = first;
 	*s = first->next;
 	first->next = NULL;
-	if (p == 0)
+	if (p == 1)
 		ft_printf("ra\n");
 }
 
@@ -59,8 +59,10 @@ void	rra(t_stack **s, int p)
 	t_stack	*aux;
 
 	aux = *s;
+	printf("Entra en rra\n");
 	while (aux->next->next != NULL)
 		aux = aux->next;
+	printf("Sale del bucle de rra\n");
 	aux->next->next = *s;
 	*s = aux->next;
 	aux->next = NULL;
@@ -70,7 +72,8 @@ void	rra(t_stack **s, int p)
 
 void	rrr(t_stack **a, t_stack **b)
 {
+	printf("Entra en rrr\n");
 	rra(a, 0);
-	rra(b, 1);
+	rrb(b, 0);
 	ft_printf("rrr\n");
 }
