@@ -6,7 +6,7 @@
 /*   By: pcampoy- <pcampoy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:46:53 by pcampoy-          #+#    #+#             */
-/*   Updated: 2025/02/21 19:40:14 by pcampoy-         ###   ########.fr       */
+/*   Updated: 2025/02/25 17:57:26 by pcampoy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,25 @@ void	arrangestacks(t_stack **a, t_stack **b)
 	t_stack	*min_node;
 
 	min_node = mincost(b);
-	if (min_node->cost_a < 0 && min_node->cost_b < 0)
+	if (min_node->cost_a < 0 && min_node->cost_b < 0) {
+		printf("ca < 0 && cb < 0\n");
 		arrangerrr(a, b, min_node->cost_a, min_node->cost_a);
-	else if (min_node->cost_a > 0 && min_node->cost_b > 0)
+	}else if (min_node->cost_a > 0 && min_node->cost_b > 0) {
+		printf("ca > 0 && cb > 0\n");
 		arrangerr(a, b, min_node->cost_a, min_node->cost_b);
-	else if (min_node->cost_a > 0 && min_node->cost_b < 0)
+	}else if (min_node->cost_a > 0 && min_node->cost_b < 0)
 	{
+		printf("ca > 0 && cb < 0\n");
 		arrangerrx(a, min_node->cost_a, 0);
 		arrangerrrx(b, min_node->cost_a, 1);
 	}
-	else
+	else if (min_node->cost_a < 0 && min_node->cost_b > 0)
 	{
+		printf("ca < 0 && cb > 0\n");
 		arrangerrrx(a, min_node->cost_a, 0);
 		arrangerrx(b, min_node->cost_b, 1);
-	}
+	} else
+		printf("ca = 0 && cb = 0\n");
 	pa(a, b);
 	algevaluate(a, b);
 }
